@@ -14,12 +14,12 @@ const API_URL = 'https://gateway.marvel.com:443/v1/public/comics?ts=${API_TS}&ap
 const API_URL_EVENTS = 'https://gateway.marvel.com:443/v1/public/events?ts=${API_TS}&apikey=${API_PK}&hash=${API_HASH}';
 
 //Llaves para el consumo de APIS
-const API_TS = "1313";
-const API_PK = "9c3c848045a6d6aeb9c8326840349a1e";
-const API_PVK = "4711f1eaab7419bb02c75706d36bc93ed811a2b5";
+const API_TS = "";
+const API_PK = "";
+const API_PVK = "";
 
 //PARA GENERAR EL HASH MD5 SE COLOCA EN EL SIGUIENTE ORDEN SOLO LOS VALORES TS -> PVK -> PK
-const API_HASH = "8a09996a474ba9dfb775328033f83a0a";
+const API_HASH = "";
 
 //Funciones de ApiBelvo*******************************************
 apiBelvoController.getCatalogBAZ = async (req, res) => {
@@ -31,7 +31,7 @@ apiBelvoController.getCatalogBAZ = async (req, res) => {
 			"Content-Type": "application/json",
 		}
 	};
-	const response = await fetch('https://gateway.marvel.com:443/v1/public/events?ts=1313&apikey=9c3c848045a6d6aeb9c8326840349a1e&hash=8a09996a474ba9dfb775328033f83a0a', OPTIONS)
+	const response = await fetch('https://gateway.marvel.com:443/v1/public/events', OPTIONS)
 	.then(res => res.json())
 	.catch(err => console.error())
 	console.log('Response: ', response.status);
@@ -47,7 +47,7 @@ apiBelvoController.getCatalogBBVA = async (req, res) => {
 			"Content-Type": "application/json",
 		}
 	};
-	const response = await fetch('https://gateway.marvel.com:443/v1/public/comics?ts=1313&apikey=9c3c848045a6d6aeb9c8326840349a1e&hash=8a09996a474ba9dfb775328033f83a0a', OPTIONS)
+	const response = await fetch('https://gateway.marvel.com:443/v1/public/comics', OPTIONS)
 	.then(res => res.json())
 	.catch(err => console.error())
 	console.log('Response: ', response.status);
